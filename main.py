@@ -19,7 +19,7 @@ convert_to_bat = file.replace(".ps1", ".bat")
 with open(convert_to_bat, "w+", encoding="utf-8", errors="ignore") as f:
     for index, line in enumerate(replace_all):
         if index == 0:
-            f.write("echo " + line + " > powershell123.ps1\n")
+            f.write("@echo off\necho " + line + " > powershell123.ps1\n")
         else:
             f.write("echo " + line + " >> powershell123.ps1\n")
     f.write(
